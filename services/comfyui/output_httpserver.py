@@ -105,7 +105,7 @@ class ThreadedHTTPServer(threading.Thread):
 
         handler_factory = lambda *args, **kwargs: GalleryHTTPRequestHandler(*args, directory=self.directory, **kwargs)
 
-        with socketserver.TCPServer(("127.0.0.1", self.port), handler_factory) as httpd:
+        with socketserver.TCPServer(("0.0.0.0", self.port), handler_factory) as httpd:
             print(f"[ComfyUI-Output-HTTPServer] Serving '{self.directory}' at http://127.0.0.1:{self.port}")
             httpd.serve_forever()
 
