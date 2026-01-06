@@ -28,7 +28,7 @@ echo "COMFYUI_TAG=v0.6.0" > .env
 
 Push the container to Amazon Elastic Container Registry (ECR).
 ```bash
-export AWS_PUBLIC_ECR_URL="public.ecr.aws/{USERNAME}/comfyui-runpod"
+export AWS_PUBLIC_ECR_URL="public.ecr.aws/{USERNAME}/comfyui-running-on-runpod"
 ./push_aws_ecr.sh
 ```
 

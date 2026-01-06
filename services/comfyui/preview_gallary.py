@@ -53,7 +53,7 @@ def request_make_zip(images_list):
                     pass
 
             # 新しい一時ファイルでZIP作成
-            tmp = tempfile.NamedTemporaryFile(suffix='.zip', delete=False)
+            tmp = tempfile.NamedTemporaryFile(suffix='.zip', delete=False, dir=OUTPUT_DIR)
             tmp_path = tmp.name
             tmp.close()
 
