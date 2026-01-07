@@ -1,8 +1,11 @@
 #!/bin/bash
 
-if [ -f ./.env ]; then
+# ComfyUI tag initial value
+export COMFYUI_TAG="v0.8.0"
+
+if [ -f ./env ]; then
   set -a
-  source ./.env
+  source ./env
   set +a
 fi
 

@@ -59,17 +59,6 @@ cd comfyui-impact-pack
 uv pip install -r requirements.txt
 popd
 
-# rgthree-comfy ノードをインストール
-pushd "${WORKSPACE}/data/comfyui/custom_nodes"
-if [ ! -d "rgthree-comfy" ] || [ "${FORCE_UPGRADE_CUSTOM_NODES:-'false'}" = "true" ] ; then
-    echo "Installing/upgrading rgthree-comfy..."
-    rm -rf rgthree-comfy >/dev/null 2>&1
-    git clone -b main --depth 1 https://github.com/rgthree/rgthree-comfy.git rgthree-comfy
-fi
-cd rgthree-comfy
-uv pip install -r requirements.txt
-popd
-
 # comfyui-crystools ノードをインストール
 pushd "${WORKSPACE}/data/comfyui/custom_nodes"
 if [ ! -d "comfyui-crystools" ] || [ "${FORCE_UPGRADE_CUSTOM_NODES:-'false'}" = "true" ] ; then

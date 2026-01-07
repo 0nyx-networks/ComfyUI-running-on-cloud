@@ -38,7 +38,6 @@ RUN set -eux \
     && cp /container/extra_model_paths.yaml ${COMFYUI_DIR} \
     && uv pip uninstall pynvml \
     && uv pip install -U nvidia-ml-py \
-    && uv pip install -U matrix-nio opencv-python-headless deepdiff piexif scikit-image \
     && rm -rf /root/.cache/uv /root/.cache/pip /tmp/*
 
 # NVIDIAランタイムの設定
