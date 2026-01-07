@@ -8,7 +8,7 @@ fi
 
 # ComfyUIのコンテナを実行
 podman container run -d --replace \
-  --name comfyui-runpod \
+  --name comfyui-running-on-runpod \
   -p 8188:8188 \
   -p 8888:8888 \
   --volume "$(pwd)/data:/workspace/data" \
@@ -21,6 +21,6 @@ podman container run -d --replace \
   --env "ENABLED_FLUX2_MODELS_CHECKSUM=${ENABLED_FLUX2_MODELS_CHECKSUM:-"false"}" \
   --env "ENABLED_QWENIMAGE_MODELS_DOWNLOAD=${ENABLED_QWENIMAGE_MODELS_DOWNLOAD:-"false"}" \
   --env "ENABLED_QWENIMAGE_MODELS_CHECKSUM=${ENABLED_QWENIMAGE_MODELS_CHECKSUM:-"false"}" \
-  localhost/comfyui-runpod:${COMFYUI_TAG:-"latest"}
+  localhost/comfyui-running-on-runpod:${COMFYUI_TAG:-"latest"}
 
-podman container logs -f comfyui-runpod
+podman container logs -f comfyui-running-on-runpod

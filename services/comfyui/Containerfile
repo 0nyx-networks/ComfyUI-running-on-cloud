@@ -25,6 +25,7 @@ RUN set -eux \
     && if [ -z "${COMFYUI_TAG}" ]; then export COMFYUI_TAG="$(git describe --tags --abbrev=0)"; fi \
     && git checkout tags/${COMFYUI_TAG} \
     && uv pip install -r requirements.txt \
+    && uv pip install -r manager_requirements.txt \
     && mkdir -p ${WORKSPACE}/comfyui/custom_nodes
 
 RUN set -eux \
