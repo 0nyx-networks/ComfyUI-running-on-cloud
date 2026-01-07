@@ -108,8 +108,6 @@ if [ ! -d "comfyui-ppm" ] || [ "${FORCE_UPGRADE_CUSTOM_NODES:-'false'}" = "true"
 fi
 popd
 
-rm -rf /root/.cache/uv /root/.cache/pip /tmp/*
-
 # --- 5. safetensors の自動ダウンロード機能 ---
 export DOWNLOAD_LIST="/container/download_list.txt"
 export CHECKSUM_LIST="/container/checksum_list.txt"
