@@ -331,6 +331,4 @@ def main():
     server.start()
 
 if __name__ == "__main__":
-    if os.environ.get("ENABLED_COMFYUI_PREVIEW_GALLERY", "false") == "true":
-        # モジュールインポート時に実行
-        main()
+    main()
