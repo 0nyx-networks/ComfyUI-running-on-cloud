@@ -10,7 +10,7 @@ mkdir -p ${WORKSPACE}/data/models/{checkpoints,clip_vision,configs,controlnet,di
 declare -A MOUNTS
 
 MOUNTS["/root/.cache"]="${WORKSPACE}/data/.cache"
-#MOUNTS["${WORKSPACE}/input"]="${WORKSPACE}/data/config/input"
+MOUNTS["${WORKSPACE}/input"]="${WORKSPACE}/data/input"
 MOUNTS["/comfyui/output"]="${WORKSPACE}/output"
 
 for to_path in "${!MOUNTS[@]}"; do
@@ -48,10 +48,11 @@ fi
 
 # --- 4. カスタムノードをインストール ---
 
-# ComfyUI の custom_nodes ディレクトリを workspace 内に移動
-rm -rf ${COMFYUI_DIR}/custom_nodes/ 2>&1 >/dev/null
-ln -s ${WORKSPACE}/data/comfyui/custom_nodes ${COMFYUI_DIR}/custom_nodes
-ls -l ${COMFYUI_DIR}/custom_nodes
+# ComfyUI の custom_nodes ディレクトリを workspace 内のものに置き換え
+pushd ${COMFYUI_DIR}
+rm -rf custom_nodes 2>&1 >/dev/null
+ln -s ${WORKSPACE}/data/comfyui/custom_nodes .
+popd
 
 # ComfyUI-Manager の設定ファイルを作成
 mkdir -p ${COMFYUI_DIR}/user/__manager/
