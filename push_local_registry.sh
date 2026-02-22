@@ -3,7 +3,7 @@
 export PRIVATE_REGISTRY_URL=${PRIVATE_REGISTRY_URL:-'registry.foundation0.link'}
 
 # ComfyUI tag initial value
-export COMFYUI_TAG="v0.11.0"
+export COMFYUI_TAG=""
 
 if [ -f ./env ]; then
   set -a
