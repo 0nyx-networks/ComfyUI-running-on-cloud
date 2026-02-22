@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ComfyUI tag initial value
-export COMFYUI_TAG="v0.8.0"
+export COMFYUI_TAG="v0.14.2"
 
 if [ -f ./env ]; then
   set -a
@@ -23,7 +23,7 @@ podman container run -d --replace \
   --env "ENABLED_QWENIMAGE_MODELS_DOWNLOAD=${ENABLED_QWENIMAGE_MODELS_DOWNLOAD:-'false'}" \
   localhost/comfyui-running-on-runpod:${COMFYUI_TAG:-"latest"}
 
-podman container logs -f comfyui-running-on-runpod
+# podman container logs -f comfyui-running-on-runpod
 
 #  --env "ENABLED_WAN2_MODELS_CHECKSUM=${ENABLED_WAN2_MODELS_CHECKSUM:-'false'}" \
 #  --env "ENABLED_FLUX2_MODELS_CHECKSUM=${ENABLED_FLUX2_MODELS_CHECKSUM:-'false'}" \

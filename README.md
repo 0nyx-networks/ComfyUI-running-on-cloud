@@ -4,8 +4,7 @@ This repository provides a setup to run [ComfyUI](https://github.com/comfyanonym
 
 ## Prerequisites
 - Runpod account with a GPU container
-- GPU container with at NVIDIA RTX 4090
-- Amazon Web Service(AWS) account with Elastic Container Registry (ECR) access
+- GPU container with at NVIDIA RTX 4090/5090
 
 ## Setup
 1. Clone this repository to your local machine or directly to your Runpod container.
